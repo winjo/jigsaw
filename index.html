@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cmn">
+<head>
+	<meta charset="UTF-8">
+	<title>拼图游戏</title>
+	<link rel="stylesheet" type="text/css" href="style/main.css">
+</head>
+<body class="no-select">
+	<div class="container">
+		<div class="top">
+			<div class="btn-group">
+				<button type="button" class="start">开   始</button>
+				<button type="button" class="end">结   束</button>
+			</div>
+		</div>
+		<div class="side-left">
+			<label for="category">选择图片</label>
+			<select name="category">
+				<option value="scenery" selected="selected">风景</option>
+				<option value="beauty">美女</option>
+				<option value="animal">动物</option>			
+			</select>
+			<div class="picture">
+				<ul class="pic-scenery">
+					<li><img src="images/scenery1.jpg" alt="scenery"></li>
+					<li><img src="images/scenery2.jpg" alt="scenery"></li>
+					<li><img src="images/scenery3.jpg" alt="scenery"></li>
+					<li><img src="images/scenery4.jpg" alt="scenery"></li>
+					<li><img src="images/scenery5.jpg" alt="scenery"></li>
+					<li><img src="images/scenery6.jpg" alt="scenery"></li>
+				</ul>
+				<ul class="pic-beauty">
+					<li><img src="images/beauty1.jpg" alt="beauty"></li>
+					<li><img src="images/beauty2.jpg" alt="beauty"></li>
+					<li><img src="images/beauty3.jpg" alt="beauty"></li>
+					<li><img src="images/beauty4.jpg" alt="beauty"></li>
+					<li><img src="images/beauty5.jpg" alt="beauty"></li>
+					<li><img src="images/beauty6.jpg" alt="beauty"></li>
+				</ul>
+				<ul class="pic-animal">
+					<li><img src="images/animal1.jpg" alt="animal"></li>
+					<li><img src="images/animal2.jpg" alt="animal"></li>
+					<li><img src="images/animal3.jpg" alt="animal"></li>
+					<li><img src="images/animal4.jpg" alt="animal"></li>
+					<li><img src="images/animal5.jpg" alt="animal"></li>
+					<li><img src="images/animal6.jpg" alt="animal"></li>
+				</ul>
+			</div>
+		</div>
+		<div class="game disabled"></div>
+		<div class="side-right">
+			<dl>
+				<dt>难度：</dt>
+				<dd>
+					<label><input type="radio" name="difficulty" value="easy" checked="checked">简单（3x3）</label><br>
+					<label><input type="radio" name="difficulty" value="medium">中等（4x4）</label><br>
+					<label><input type="radio" name="difficulty" value="hard">困难（5x5）</label><br>
+				</dd>
+				<dt>计时（秒）：</dt>
+				<dd><span class="time">0</span></dd>
+				<dt>最短（秒）：</dt>
+				<dd class="best">
+					<span>简单：</span><em class="easy"></em><br>
+					<span>中等：</span><em class="medium"></em><br>
+					<span>困难：</span><em class="hard"></em><br>
+				</dd>
+			</dl>
+			<div class="prompt">
+				<h4>提示：</h4>
+				<p>用鼠标拖拽碎片到正确的位置</p>
+			</div>		
+		</div>
+		<div class="v-modal fade">
+			<div class="dialog">
+				<h3 class="modal-title">恭喜完成</h3>
+				<p class="difficulty">难度：<span></span></p>
+				<p class="time">用时：<span></span> 秒<em></em></p>
+				<button type="button">关闭</button>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="script/jquery.min.js"></script>
+	<script type="text/javascript" src="script/main.js"></script>
+</body>
+</html>
